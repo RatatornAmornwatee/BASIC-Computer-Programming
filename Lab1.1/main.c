@@ -15,7 +15,7 @@ int main() {
     return 1 ;
   }//end if
 
-  // Print Hello Loop! N time
+  // Print "Hello Loop!" N time
   for( i = 0 ; i < N ; i++ ) {
     printf ( "Hello Loop!\n" ) ;
   }//end for
