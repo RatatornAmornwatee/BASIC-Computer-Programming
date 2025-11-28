@@ -7,18 +7,18 @@ int main() {
   if( scanf ( "%d" , &N ) != 1 ) {
     printf ( "Error" ) ;
     return 1 ;
-  }//end if
+  }// end if
 
   // Input varidation
   if( N <= 0 ) {
     printf ( "Error" ) ;
     return 1 ;
-  }//end if
+  }// end if
 
   // Print "Hello Loop!" N time
   for( i = 0 ; i < N ; i++ ) {
     printf ( "Hello Loop!\n" ) ;
-  }//end for
+  }// end for
 
   return 0 ;
-}//end main function
+}// end main function
