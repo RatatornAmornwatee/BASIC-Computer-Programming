@@ -3,18 +3,21 @@
 int main() {
   int N , i ;
 
-  if( scanf( "%d" , &N ) != 1 ) {
-    printf( "Error" ) ;
+  // Read number of times to print the message
+  if( scanf ( "%d" , &N ) != 1 ) {
+    printf ( "Error" ) ;
     return 1 ;
   }//end if
 
+  // Input varidation
   if( N <= 0 ) {
-    printf( "Error" ) ;
+    printf ( "Error" ) ;
     return 1 ;
   }//end if
 
+  // Print Hello Loop! N time
   for( i = 0 ; i < N ; i++ ) {
-    printf( "Hello Loop!\n" ) ;
+    printf ( "Hello Loop!\n" ) ;
   }//end for
 
   return 0 ;
