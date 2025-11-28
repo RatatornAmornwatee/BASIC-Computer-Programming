@@ -5,7 +5,7 @@ int main() {
 
   // Get score input and varidate
   if( scanf ( "%d" , &score ) != 1 ) {
-    printf (" Error" ) ;
+    printf ( " Error" ) ;
     return 1 ;
   }//end if
 
