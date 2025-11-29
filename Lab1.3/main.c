@@ -1,32 +1,35 @@
 #include <stdio.h>
 
 int main() {
-  int num1 , num2 , operationCode , result ;
+  int num1, num2, operationCode, result;
 
-  if ( scanf ( "%d %d %d" , &num1 , &num2 , &operationCode ) != 3 ) {
-    printf ( "Error" ) ;
-    return 1 ;
-  }
+  // Get num1, num2, operationCode and input varidation
+  if (scanf("%d %d %d" , &num1, &num2, &operationCode) != 3) {
+    printf("Error");
+    return 1;
+  }//end if
 
-  switch ( operationCode ) {
-    case 1 : 
-      result = num1 + num2 ;
+  // Calculating
+  switch(operationCode) {
+    case 1 :
+      result = num1 + num2;
       break;
     case 2 : 
-      result = num1 - num2 ;
+      result = num1 - num2;
       break;
     case 3 : 
-      result = num1 * num2 ;
+      result = num1 * num2;
       break;
     case 4 : 
-      result = num1 / num2 ;
+      result = num1 / num2;
       break;
     default :
-      printf( "Invalid Operation" ) ;
-      return 0 ;
-  }
+      printf("Invalid Operation");
+      return 0;
+  }//end switch case
 
-  printf ( "%d" , result ) ;
+  // Show result value
+  printf("%d", result);
 
-  return 0 ;
-}
+  return 0;
+}//end main function
