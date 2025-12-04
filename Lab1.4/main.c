@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 int main() {
-  int N , sum = 0 , i ;
+    int N, sum = 0, i;
 
-  if( scanf( "%d" , &N ) != 1 ) {
-    return 1 ;
-  }
+    if(scanf("%d" , &N) != 1) {
+        return 1;
+    }// end if
 
-  for( i = 0 ; i < N ; i++ ) {
-    sum += i + 1 ;
-  }
+    for(i = 0; i < N; i++) {
+        sum += i + 1;
+    }// end for loop
 
-  printf( "%d" , sum ) ;
+    printf("%d", sum);
 
-  return 0 ;
-}
+    return 0;
+}// end main function
