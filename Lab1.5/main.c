@@ -15,7 +15,6 @@ int main() {
             evenSum += number ;
         } else {
             oddSum += number ;
-            printf("%d",number);
         }// end if
 
         if( scanf( "%d" , &number ) != 1 ) {
