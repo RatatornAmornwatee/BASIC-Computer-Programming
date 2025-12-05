@@ -14,9 +14,9 @@ int main() {
         if ( number >= 1 && number <= 10 ) {
             printf( "Input accepted: %d\n" , number ) ;
             break ;
-        } else {
-            printf( "Error: Value must be 1-10.\n" ) ;
-        }// end if else
+        } // end if
+
+        printf( "Error: Value must be 1-10.\n" ) ;
 
     } while ( 1 ) ; // end do while loop
 
