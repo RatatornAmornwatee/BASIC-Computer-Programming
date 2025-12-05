@@ -1,17 +1,24 @@
 #include <stdio.h>
 
 int main() {
-  int number ;
+    int number ;
 
-  do {
-    printf ( "Enter a number (1-10): " ) ;
-    
-    if ( scanf ("%d" , &number ) != 1 ) {
-      break ;
-    }
+    do {
+        if ( scanf ("%d" , &number ) != 1 ) {
+            printf( "Error: Input must be number." ) ;
+            break ;
+        }// end if
 
-  } while ( number < 1 || number > 10 ) ;
+        printf ( "Enter a number (1-10): " ) ;
 
-  printf ( "Input accepted: %d\n" , number ) ;
+        if ( number >= 1 && number <= 10 ) {
+            printf( "Input accepted: %d\n" , number ) ;
+            break ;
+        } else {
+            printf( "Error: Value must be 1-10.\n" ) ;
+        }// end if else
+
+    } while ( 1 ) ; // end do while loop
+
   return 0 ;
-}
+}// end main function
