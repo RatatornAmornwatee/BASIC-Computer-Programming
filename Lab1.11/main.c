@@ -9,12 +9,14 @@ int main() {
     float vatAmount = 0.0 ;
 
     if ( scanf( "%f %d" , &price_before_vat , & categoryCode ) != 2 ) {
+        printf( "Input error" ) ;
         return 1 ;
-    }
+    }// end if
 
     if( price_before_vat < 0 ) {
+        printf( "Price cannot be negative" ) ;
         return 1 ;
-    }
+    }// end if
 
     totalBill = VatCalculate( categoryCode , price_before_vat ) ;
 
@@ -25,10 +27,10 @@ int main() {
     }
     else {
         printf( "Invalid Category\n" ) ;
-    }
+    }// end if else
 
     return 0 ;
-}
+}// end main function
 
 float VatCalculate( int categoryCode , float price_before_vat ) {
     switch (categoryCode) {
@@ -41,6 +43,6 @@ float VatCalculate( int categoryCode , float price_before_vat ) {
         case 3 : {
             return price_before_vat * 1.15 ;
         }
-    }
+    }// end switch case
     return 0 ;
-}
+}// end main function
