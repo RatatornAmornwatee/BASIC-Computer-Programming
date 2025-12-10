@@ -1,51 +1,45 @@
 #include <stdio.h>
 
 int main() {
-    int termCode ;
-    float investmentAmount ;
-    float aprRate = 0.0 ;
-    float totalInterest = 0.0 ;
+    float pricipal ;
+    float monthlyPayment ;
+    float interest ;
+    int monthCount = 0 ;
+    const float INTEREST_RATE = 0.01 ;
+    const float PENALTY = 10.0 ;
 
-    if( scanf( "%d %f" , &termCode , &investmentAmount ) != 2 ) {
+    if ( scanf( "%f %f" , &pricipal , &monthlyPayment ) != 2 ) {
         return 1 ;
-    }// end if
+    } // end if
 
-    if ( investmentAmount < 0 ) {
-        printf( "Investment cannot be negative" ) ;
+    if ( pricipal < 0 ) {
         return 1 ;
-    }// end if
+    } // end if
 
-    switch( termCode ) {
-        case 1 : {
-            if ( investmentAmount < 5000 ) {
-                aprRate = 0.03 ;
-            } 
-            else {
-                aprRate = 0.04 ;
-            }// end if else
-            break ;
-        }
-        case 2 : {
-            if ( investmentAmount < 10000 ) {
-                aprRate = 0.05 ;
-            } 
-            else {
-                aprRate = 0.065 ;
-            }// end if else
-            break ;
-        }
-        case 3 : {
-            aprRate = 0.08 ;
-        }
-    }// end switch case
+    if ( monthlyPayment < 0 ) {
+        return 1 ;
+    } // end if
 
-    if ( termCode >= 1 && termCode <= 3 ) {
-        totalInterest = investmentAmount * aprRate ;
-        printf( "%.2f\n" , totalInterest ) ;
-    }
-    else {
-        printf( "Invalid Term Code\n" ) ;
-    }// end if else
+    do {
+        if( monthCount >= 10 ) {
+            printf( "Loan settled in 10+ months.\n" ) ;
+            return 0 ;
+        }
+
+        interest = pricipal * INTEREST_RATE ;
+        pricipal = pricipal + interest ;
+        
+        if ( monthlyPayment < interest ){
+            pricipal = pricipal + PENALTY ;
+        }// end if
+
+        pricipal = pricipal - monthlyPayment ;
+        monthCount++ ;
+
+        printf( "Month %d: Remaining %.2f\n" , monthCount , pricipal ) ;
+    } while( pricipal > 0 ) ; //end do while loop
+
+    printf( "Loan settled in %d months.\n" , monthCount ) ;
 
     return 0 ;
 }// end main function
