@@ -25,7 +25,7 @@ int main() {
 
         if ( students[ i ].score < 0 ) {
             return 0 ;
-        }
+        }// end if
 
         average_score += students[ i ].score ;
 
