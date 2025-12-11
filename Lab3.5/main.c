@@ -26,7 +26,6 @@ int main() {
         }// end if
 
         itemTotal = ( orders[i].uniPrice * (float)orders[ i ].quantity ) + SHIPPING_FEE ;
-        printf("%f\n",itemTotal);
 
         if ( itemTotal >= 500 ) {
             itemTotal *= 0.90 ;
