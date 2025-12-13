@@ -1,48 +1,47 @@
 #include <stdio.h>
 
-int main() {
-    int N_DAYS ;
-    int day ;
-    float initailBudget ;
-    float remainingBudget ;
-    float dailySpend ;
+struct Item {
+    char name[ 50 ] ;
+    float uniPrice ;
+    int quantity ;
+};
 
-    if ( scanf( "%f %d" , &initailBudget , &N_DAYS ) != 2 ) {
+int main() {
+    int N ;
+    int i ;
+    float subTotal = 0.0 ;
+    float totalVAT = 0.0 ;
+    float grandTotal = 0.0 ;
+    float VAT_RATE = 0.07 ;
+
+    if ( scanf( "%d" , &N ) != 1 ) {
         return 1 ;
     }// end if
 
-    remainingBudget = initailBudget ;
+    struct Item items[ N ] ;
 
-    printf( "Day | Spend | Remaining\n") ;
-    printf( "---------------------------\n") ;
+    printf( "--- RECEIPT ---\n" ) ;
 
-    for ( day = 1 ; day <= N_DAYS ; day++ ) {
-        dailySpend = 0.0 ;
+    for ( i = 0 ; i < N ; i++ ) {
+        float itemCost ;
 
-        if ( remainingBudget >= 500.00 ) {
-            dailySpend = 100.00 ;
-        }
-        else if ( remainingBudget >= 100.00 ) {
-            dailySpend = 50.00 ;
-        }
-        else if ( remainingBudget > 0.00 ) {
-            dailySpend = 20.00 ;
-        }
-        else {
-            dailySpend = 0 ;
-        }
+        if ( scanf( "%s %f %d" , items[ i ].name , &items[ i ].uniPrice , &items[ i ].quantity ) != 3 ) {
+            return 1 ;
+        }// end if
 
-        if ( dailySpend > remainingBudget ) {
-            dailySpend = remainingBudget ;
-        }// end if else
+        itemCost = items[ i ].uniPrice * items[ i ].quantity ;
 
-        remainingBudget -= dailySpend ;
-
-        printf( "%d | %.2f | %.2f\n" , day , dailySpend , remainingBudget ) ;
+        printf( "%s x %d = %.2f\n" , items[ i ].name , items[ i ].quantity , itemCost ) ;
+        subTotal += itemCost ;
     }// end for loop
 
-    printf( "---------------------------\n") ;
-    printf( "Final Budget: %.2f\n" , remainingBudget ) ;
-    return 0 ;
+    totalVAT = subTotal * VAT_RATE ;
+    grandTotal = subTotal + totalVAT ;
 
+    printf( "-------------\n" ) ;
+    printf( "Subtotal: %.2f\n" , subTotal ) ;
+    printf( "VAT (7%): %.2f\n" , totalVAT ) ;
+    printf( "Grand Total: %.2f\n" , grandTotal ) ;
+
+    return 0 ;
 }// end main function
