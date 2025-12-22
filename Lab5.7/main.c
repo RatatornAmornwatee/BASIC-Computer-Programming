@@ -2,33 +2,33 @@
 
 #define SIZE 5
 
-void sort_array_ascending(int array[], int size);
-void print_array(int array[], int size);
+void sort_array_ascending( int array[] , int size ) ;
+void print_array( int array[] , int size ) ;
 
 int main() {
-    int numbers[SIZE];
-    int original_copy[SIZE];
-    int i;
+    int numbers[ SIZE ] ;
+    int original_copy[ SIZE ] ;
+    int i ;
 
-    printf("Enter %d integer numbers for sorting:\n", SIZE);
-    for (i = 0; i < SIZE; i++) {
-        printf("Element %d: ", i + 1);
-        scanf("%d", &numbers[i]);
-        original_copy[i] = numbers[i];
-    }
+    printf( "Enter %d integer numbers for sorting:\n" , SIZE ) ;
+    for ( i = 0 ; i < SIZE ; i++ ) {
+        printf( "Element %d: " , i + 1 ) ;
+        scanf( "%d" , &numbers[ i ] ) ;
+        original_copy[ i ] = numbers[ i ] ;
+    }// end for loop
 
-    printf("\n--- ARRAY SORTING REPORT ---\n");
+    printf( "\n--- ARRAY SORTING REPORT ---\n" ) ;
 
-    printf("Original Array: ");
+    printf( "Original Array: " ) ;
 
-    print_array(original_copy , SIZE);
+    print_array( original_copy , SIZE ) ;
 
     sort_array_ascending( numbers , SIZE ) ;
-    printf("Sorted Array (Ascending): ");
-    print_array(numbers, SIZE);
+    printf( "Sorted Array (Ascending): " ) ;
+    print_array( numbers, SIZE ) ;
 
-    return 0;
-}
+    return 0 ;
+}// end main function
 
 void sort_array_ascending( int array[] , int size ) {
     int i = 0 ;
@@ -40,14 +40,14 @@ void sort_array_ascending( int array[] , int size ) {
                 int temp = array[ j ] ;
                 array[ j ] = array[ j + 1 ] ;
                 array[ j + 1 ] = temp ;
-            }
-        }
-    }
-}
+            }// end if
+        }// end for loop
+    }// end for loop
+}// end sort_array_ascending function
 
 void print_array(int array[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", array[i]) ;
-    }
+    }// end for loop
     printf("\n");
-}
+}// end print_array function
