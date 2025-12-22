@@ -19,9 +19,15 @@ int main() {
     for (i = 0; i < NUM_EMPLOYEES; i++) {
         printf( "--- Employee %d ---\n" , i + 1 ) ;
         printf( "Enter ID: " ) ;
-        scanf( "%d" , &staff_data[i].id ) ;
+        if ( scanf( "%d" , &staff_data[i].id ) != 1 ) {
+            return 1 ;
+        }// end if
+
         printf ("Enter Salary: " ) ;
-        scanf( "%d", &staff_data[i].salary ) ;
+        if ( scanf( "%d" , &staff_data[i].salary ) != 1 ) {
+            return 1 ;
+        }// end if
+
     }// end for
 
     find_min_max_salary( staff_data , NUM_EMPLOYEES , &max_salary , &min_salary ) ;
