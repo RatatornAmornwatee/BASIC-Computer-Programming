@@ -27,7 +27,7 @@ int main() {
             damageReduction = 0.20 ;
         }
         else {
-            damageDeficit = 0.40 ;
+            damageReduction = 0.40 ;
         }// end if else
 
         netDamage = baseAttack * ( 1.0 - damageReduction ) ;
