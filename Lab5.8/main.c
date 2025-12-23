@@ -66,4 +66,4 @@ char calculate_grade( int total_score ) {
 
 void calculate_average( int total_score , float *avg ) {
     *avg = total_score / 3 ;
-}
+}// end calculate_average function
