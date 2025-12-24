@@ -22,9 +22,11 @@ int main() {
 
     printf( "\n--- PERSONAL FINANCE REPORT ---\n" ) ;
     printf( "Transactions Recorded: " ) ;
+
     for ( i = 0 ; i < SIZE ; i++ ) {
         printf( "%d " , transactions[i] ) ;
     }// end for loop
+
     printf( "\n" ) ;
     printf( "Net Balance: %d\n" , net_balance ) ;
     printf( "Status: " ) ;
@@ -44,8 +46,8 @@ int calculate_net_balance( int *trans_array , int size , int *status_ptr ) {
     int i ;
 
     for ( i = 0 ; i < size ; i++ ) {
-        net += * ( trans_array + i ) ;
-    }// end if
+        net += *( trans_array + i ) ;
+    }// end for loop
 
     if ( net < 0 ) {
         *status_ptr = 0 ;
