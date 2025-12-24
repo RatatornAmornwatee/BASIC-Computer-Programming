@@ -2,9 +2,9 @@
 
 #define MONTHS 3
 
-int analyze_profitability(int *rev_ptr, int *exp_ptr, int size, int *status_ptr);
-void get_monthly_data(int array[], int size, const char *type);
-void print_monthly_data(int array[], int size, const char *type);
+int analyze_profitability( int *rev_ptr , int *exp_ptr , int size , int *status_ptr ) ;
+void get_monthly_data(int array[] , int size , const char *type ) ;
+void print_monthly_data( int array[] , int size , const char *type ) ;
 
 int main() {
     int monthly_revenue[ MONTHS ] ;
@@ -19,15 +19,22 @@ int main() {
     print_monthly_data( monthly_revenue , MONTHS , "REVENUE" ) ;
     print_monthly_data( monthly_expense , MONTHS , "EXPENSE" ) ;
 
-    net_profit = analyze_profitability( monthly_revenue , monthly_expense , &business_status ) ;
+    net_profit = analyze_profitability( monthly_revenue , monthly_expense , MONTHS , &business_status ) ;
 
     printf( "\nNET PROFIT: %d\n" , net_profit ) ;
     printf( "BUSINESS STATUS: " ) ;
 
+    if ( business_status == 1 ) {
+        printf( "PROJECT IS PROFITABLE" ) ;
+    }
+    else {
+        printf( "PROJECT IS UNPROFITABLE" ) ;
+    }
+
     return 0 ;
 }// end main function
 
-int analyze_profitability(int *rev_ptr, int *exp_ptr, int size, int *status_ptr) {
+int analyze_profitability( int *rev_ptr , int *exp_ptr , int size , int *status_ptr ) {
     int profit = 0 ;
     int i = 0 ;
 
@@ -46,7 +53,7 @@ int analyze_profitability(int *rev_ptr, int *exp_ptr, int size, int *status_ptr)
         *status_ptr = 1 ;
     }// end if
 
-    return profit
+    return profit ;
 }//end analyze_profitability function
 
 void get_monthly_data( int array[] , int size , const char *type ) {
